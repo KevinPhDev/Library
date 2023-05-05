@@ -29,9 +29,10 @@ addBookToLibrary('book3', 'author3', 30);
 
 for (i = 0; i < myLibrary.length; i++) {
     addCard();
+    const card = document.querySelectorAll('.card')[i];
     const bookTitle = document.createElement('h1');
     bookTitle.innerText = `${myLibrary[i]}`;
-    document.body.appendChild(bookTitle);
+    card.appendChild(bookTitle);
 }
 
 console.log(myLibrary);
