@@ -11,14 +11,27 @@ function addBookToLibrary(title, author, pages) {
     myLibrary.push(book.title);
 }
 
+const cardContainer = document.querySelector('.cardContainer');
+
+function addCard() {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.style.border = '2px solid black';
+    card.style.height = '200px';
+    card.style.width = '200px';
+    cardContainer.appendChild(card);
+}
+
 addBookToLibrary('book1', 'author1', 10);
 addBookToLibrary('book2', 'author2', 20);
 addBookToLibrary('book3', 'author3', 30);
 
+
 for (i = 0; i < myLibrary.length; i++) {
-    const h1Title = document.createElement('h1');
-    h1Title.innerText = `${myLibrary[i]}`;
-    document.body.appendChild(h1Title);
+    addCard();
+    const bookTitle = document.createElement('h1');
+    bookTitle.innerText = `${myLibrary[i]}`;
+    document.body.appendChild(bookTitle);
 }
 
 console.log(myLibrary);

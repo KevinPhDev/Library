@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    height: 70%;
+}
