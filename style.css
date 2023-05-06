@@ -2,6 +2,13 @@ body {
     height: 100vh;
 }
 
+.header {
+    display: flex;
+    padding: 20px;
+    border: 2px solid black;
+    height: 5%;
+}
+
 .cardContainer {
     display: flex;
     gap: 20px;
