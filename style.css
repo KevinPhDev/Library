@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    position: relative;
 }
 
 .header {
@@ -15,4 +16,38 @@ body {
     padding: 10px;
     border: 2px solid black;
     height: 70%;
+}
+
+#bookForm {
+    z-index: 0;
+}
+
+#bookForm-container {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    padding: 20px;
+    gap: 5px;
+}
+
+#bookForm-container>label {
+    height: fit-content;
+    position: relative;
+}
+
+#bookForm-container>input {
+    height: 30px;
+}
+
+#cancelButton {
+    align-self: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px 10px;
 }
