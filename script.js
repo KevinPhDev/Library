@@ -35,4 +35,10 @@ for (i = 0; i < myLibrary.length; i++) {
     card.appendChild(bookTitle);
 }
 
-console.log(myLibrary);
+function openForm() {
+    document.getElementById("bookForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("bookForm").style.display = "none";
+}
