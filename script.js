@@ -1,4 +1,5 @@
 let myLibrary = [];
+let i = 0;
 
 function Book(title, author, pages) {
     this.title = title;
@@ -13,26 +14,33 @@ function addBookToLibrary(title, author, pages) {
 
 const cardContainer = document.querySelector('.cardContainer');
 
-function addCard() {
+function addCard(i) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.style.border = '2px solid black';
     card.style.height = '200px';
     card.style.width = '200px';
     cardContainer.appendChild(card);
+    const bookTitle = document.createElement('h1');
+    bookTitle.innerText = `${myLibrary[i]}`;
+    card.appendChild(bookTitle);
 }
 
 addBookToLibrary('book1', 'author1', 10);
 addBookToLibrary('book2', 'author2', 20);
 addBookToLibrary('book3', 'author3', 30);
 
+function displayBook() {
+    for (i; i < myLibrary.length; i++) {
+        addCard(i);
+        if (i === myLibrary.length) {
+            i = myLibrary.length;
+        }
+    }
+}
 
-for (i = 0; i < myLibrary.length; i++) {
-    addCard();
-    const card = document.querySelectorAll('.card')[i];
-    const bookTitle = document.createElement('h1');
-    bookTitle.innerText = `${myLibrary[i]}`;
-    card.appendChild(bookTitle);
+for (i; i < myLibrary.length; i++) {
+    displayBook();
 }
 
 function openForm() {
@@ -50,5 +58,7 @@ submitBook.addEventListener('click', function (event) {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
+    
     addBookToLibrary(title, author, pages);
+    displayBook();
 })
