@@ -33,13 +33,10 @@ addBookToLibrary('book3', 'author3', 30);
 function displayBook() {
     for (i; i < myLibrary.length; i++) {
         addCard(i);
-        if (i === myLibrary.length) {
-            i = myLibrary.length;
-        }
+        console.log(i);
     }
 }
-
-for (i; i < myLibrary.length; i++) {
+if (i < myLibrary.length) {
     displayBook();
 }
 
