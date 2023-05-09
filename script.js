@@ -24,6 +24,14 @@ function addCard(i) {
     const bookTitle = document.createElement('h1');
     bookTitle.innerText = `${myLibrary[i]}`;
     card.appendChild(bookTitle);
+    const removeButton = document.createElement('button');
+    removeButton.style.border = '1px solid black';
+    removeButton.style.width = 'fit-content';
+    removeButton.style.height = 'fit-content';
+    removeButton.style.padding = '5px'
+    removeButton.classList.add('remove');
+    removeButton.innerText = 'Remove';
+    card.appendChild(removeButton);
 }
 
 addBookToLibrary('book1', 'author1', 10);
