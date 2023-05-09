@@ -28,10 +28,11 @@ function addCard(i) {
     removeButton.style.border = '1px solid black';
     removeButton.style.width = 'fit-content';
     removeButton.style.height = 'fit-content';
-    removeButton.style.padding = '5px'
+    removeButton.style.padding = '5px';
     removeButton.classList.add('remove');
     removeButton.innerText = 'Remove';
     card.appendChild(removeButton);
+    return removeButton;
 }
 
 addBookToLibrary('book1', 'author1', 10);
@@ -40,10 +41,18 @@ addBookToLibrary('book3', 'author3', 30);
 
 function displayBook() {
     for (i; i < myLibrary.length; i++) {
-        addCard(i);
-        console.log(i);
+      const removeButton = addCard(i);
+      removeButton.addEventListener('click', function (i) {
+        return function (event) {
+          myLibrary.splice(i, 1);
+          const card = event.target.closest('.card');
+          card.remove();
+          console.log(myLibrary);
+        };
+      }(i));
     }
-}
+  }
+
 if (i < myLibrary.length) {
     displayBook();
 }
