@@ -32,6 +32,14 @@ function addCard(i) {
     removeButton.classList.add('remove');
     removeButton.innerText = 'Remove';
     card.appendChild(removeButton);
+    const readStatusButton = document.createElement('button');
+    readStatusButton.style.border = '1px solid black';
+    readStatusButton.style.width = 'fit-content';
+    readStatusButton.style.height = 'fit-content';
+    readStatusButton.style.padding = '5px';
+    readStatusButton.classList.add('remove');
+    readStatusButton.innerText = 'Unread';
+    card.appendChild(readStatusButton);
     return removeButton;
 }
 
