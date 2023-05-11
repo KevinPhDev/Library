@@ -12,6 +12,8 @@ function addBookToLibrary(title, author, pages) {
     myLibrary.push(book.title);
 }
 
+Book.prototype.read = false;
+
 const cardContainer = document.querySelector('.cardContainer');
 
 function addCard(i) {
