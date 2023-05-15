@@ -21,6 +21,7 @@ body {
 
 #bookForm {
     z-index: 0;
+    display: none;
 }
 
 #bookForm-container {

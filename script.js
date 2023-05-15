@@ -50,18 +50,18 @@ addBookToLibrary('book2', 'author2', 20);
 addBookToLibrary('book3', 'author3', 30);
 
 function displayBook() {
-    for (i; i < myLibrary.length; i++) {
-      const removeButton = addCard(i);
-      removeButton.addEventListener('click', function (i) {
-        return function (event) {
-          myLibrary.splice(i, 1);
-          const card = event.target.closest('.card');
-          card.remove();
-          console.log(myLibrary);
-        };
-      }(i));
-    }
-  }
+  cardContainer.innerHTML = '';
+  myLibrary.forEach((book, index) => {
+    const removeButton = addCard(index);
+    removeButton.addEventListener('click', function() {
+      const bookIndex = this.dataset.index;
+      myLibrary.splice(bookIndex, 1);
+      displayBook();
+      console.log(myLibrary);
+    });
+    removeButton.dataset.index = index;
+  });
+}
 
 if (i < myLibrary.length) {
     displayBook();
