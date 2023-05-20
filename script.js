@@ -1,5 +1,4 @@
 let myLibrary = [];
-let i = 0;
 
 function Book(title, author, pages) {
     this.title = title;
@@ -16,7 +15,7 @@ Book.prototype.read = false;
 
 const cardContainer = document.querySelector('.cardContainer');
 
-function addCard(i) {
+function addCard(index) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.style.border = '2px solid black';
@@ -24,7 +23,7 @@ function addCard(i) {
     card.style.width = '200px';
     cardContainer.appendChild(card);
     const bookTitle = document.createElement('h1');
-    bookTitle.innerText = `${myLibrary[i]}`;
+    bookTitle.innerText = `${myLibrary[index]}`;
     card.appendChild(bookTitle);
     const removeButton = document.createElement('button');
     removeButton.style.border = '1px solid black';
@@ -51,7 +50,7 @@ addBookToLibrary('book3', 'author3', 30);
 
 function displayBook() {
   cardContainer.innerHTML = '';
-  myLibrary.forEach((book, index) => {
+  myLibrary.forEach((_, index) => {
     const removeButton = addCard(index);
     removeButton.addEventListener('click', function() {
       const bookIndex = this.dataset.index;
@@ -63,9 +62,7 @@ function displayBook() {
   });
 }
 
-if (i < myLibrary.length) {
-    displayBook();
-}
+displayBook();
 
 function openForm() {
     document.getElementById("bookForm").style.display = "block";
