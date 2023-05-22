@@ -21,6 +21,7 @@ function addCard(index) {
     card.style.border = '2px solid black';
     card.style.height = '200px';
     card.style.width = '200px';
+    card.style.backgroundColor = '#009933';
     cardContainer.appendChild(card);
     const bookTitle = document.createElement('h1');
     bookTitle.innerText = `${myLibrary[index]}`;
